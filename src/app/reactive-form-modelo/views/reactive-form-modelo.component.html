@@ -1,0 +1,77 @@
+<div class="container p-2">
+    <div class="rounded shadow m-auto p-1">
+        <div class="row m-1">
+            <div class="col-md-4 bg-primary rounded p-2">
+                <form [formGroup]="reactiveFormModelo.form" (ngSubmit)="submit()" class="text-white" role="form">
+                    <div class="card bg-transparent p-1 border-0">
+                        <p>Dados pessoais</p>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Nome*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="nome" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'nome')">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card bg-transparent p-1 border-0">
+                        <p>Contatos</p>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Telefone*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="telefone" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'telefone')">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Email*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="email" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'email')">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card bg-transparent p-1 border-0">
+                        <p>Endereço</p>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Rua*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="rua" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'rua')">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Número*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="numero" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'numero')">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m-auto">
+                                <label class="">Cidade*</label>
+                                <input type="text" class="form-control form-control-sm" formControlName="cidade" [ngClass]="formValidatorsAplyClass.applyInvalidClass(reactiveFormModelo.form,'cidade')">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col d-grid gap-1 d-md-flex justify-content-md-end">
+                            <button class="btn btn-secondary border-white btn-sm text-uppercase" type="button" (click)="load()">Preset</button>
+                            <button class="btn btn-primary border-white btn-sm text-uppercase" type="submit">Enviar</button>
+                            <button class="btn btn-light btn-sm text-uppercase" type="button" (click)="clean()">Limpar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 bg-opacity-75 rounded p-2" [ngClass]="reactiveFormModelo.form.valid ? 'bg-success': 'bg-danger' ">
+                <div class="card bg-transparent p-1 border-0 text-white">
+                    <p>Form</p>
+                    <pre>{{reactiveFormModelo.form.value | json}}</pre>
+                </div>
+            </div>
+            <div class="col-md-4 bg-dark rounded p-2">
+                <div class="card bg-transparent p-1 border-0 text-white">
+                    <p>Model</p>
+                    <pre>{{reactiveFormModelo.model | json}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
