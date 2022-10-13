@@ -9,6 +9,7 @@ export class Sources {
             rua: 'Manoel Raposos',
             numero: 2405,
             cidade: 'Abaetetuba',
+            enderecoCompleto: 'Manoel Raposos',
         },
     }
 }
